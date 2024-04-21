@@ -16,5 +16,6 @@
 				"src/data/*.ts"
 			],
 		},
+		"skipLibCheck": true,
 	}
 }
