@@ -1,7 +1,7 @@
 ---
 import Blog from "@layouts/blog";
 import Date from "@components/utilities/Date";
-import { published, getRSS } from "@data/post"
+import { published, getRSS, type Post } from "@data/post"
 import rss from '@astrojs/rss';
 
 export async function getStaticPaths() {
@@ -16,6 +16,10 @@ export async function getStaticPaths() {
 			props: { post }
 		};
 	})
+}
+
+type Props = {
+	post: Post & { Content: string }
 }
 
 // Destructure to get both `Astro.props.post` and `Astro.props.post.Content`
